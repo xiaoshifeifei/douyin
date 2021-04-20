@@ -47,7 +47,7 @@
             :resizable="false"
           >
             <!--if判断的是父组件传的表头是操作的id名-->
-            
+
             <template slot-scope="scope">
               <el-button
                 class="class-btn"
@@ -89,7 +89,7 @@
               <!--可以自行增加按钮，请改变点击事件的第二个参数，父组件会根据第二个参数判断当前点击的是什么按钮-->
             </template>
           </el-table-column>
-           <el-table-column
+          <el-table-column
             v-else-if="item.id === 'avatar'"
             :label="item.label"
             :key="index"
@@ -129,9 +129,6 @@
             </template> -->
           </el-table-column>
 
-
-
-           
           <el-table-column
             v-else-if="item.index === 'index'"
             :type="item.index"
@@ -184,9 +181,6 @@
             </template>
           </el-table-column>
 
-
-         
-
           <el-table-column
             v-else
             :label="item.label"
@@ -221,7 +215,7 @@
 export default {
   name: "tablepublics",
   props: {
-    height: { type: Number, default: 0 },
+    height: { default: 0 },
     tableData: {
       // 表格数据源 默认为空数组
       type: Array,
@@ -243,7 +237,7 @@ export default {
     // console.log(this.tableData);
     // this.windowHeight = window.innerHeight - 400 + "px";
   },
-  mounted(){
+  mounted() {
     // this.$nextTick(function() {
     //   this.windowHeight =
     //     window.innerHeight - this.$refs.multipleTable.offsetHeight + 400;
@@ -285,7 +279,7 @@ export default {
       for (let i = 0; i < pageData.length; i++) {
         // console.log('pageData',pageData);
         if (selectAllIds.indexOf(pageData[i][idKey]) >= 0) {
-        // console.log("selectAllIds",selectAllIds);
+          // console.log("selectAllIds",selectAllIds);
           this.$refs.multipleTable.toggleRowSelection(pageData[i], true);
         }
       }
@@ -301,7 +295,7 @@ export default {
     },
     // 正常
     handleSelectionChange(val) {
-      console.log('val2222',val);
+      console.log("val2222", val);
       this.$emit("handleSelectionChange", { val: val });
     },
     // 正常

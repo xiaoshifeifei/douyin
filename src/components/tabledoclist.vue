@@ -57,8 +57,8 @@
                 >{{ item2.name }}</el-button
               >
             </template> -->
-              <!--可以自行增加按钮，请改变点击事件的第二个参数，父组件会根据第二个参数判断当前点击的是什么按钮-->
-             <template slot-scope="scope">
+            <!--可以自行增加按钮，请改变点击事件的第二个参数，父组件会根据第二个参数判断当前点击的是什么按钮-->
+            <template slot-scope="scope">
               <el-button
                 @click="handleEdit(scope.row, 'edit')"
                 size="mini"
@@ -73,7 +73,6 @@
                 >审核</el-button
               >
             </template>
-
           </el-table-column>
           <el-table-column
             v-else-if="item.index === 'index'"
@@ -100,7 +99,8 @@
                 @click="handleClick(scope.row)"
                 size="mini"
                 type="primary"
-                >立即播放</el-button>
+                >立即播放</el-button
+              >
             </template>
           </el-table-column>
 
@@ -196,7 +196,7 @@ export default {
       default: () => []
     },
     total: { type: Number, default: 0 },
-    height: { type: Number, default: 0 },
+    height: { default: 0 },
     pageSize: { type: Number, default: 0 }
   },
   created() {

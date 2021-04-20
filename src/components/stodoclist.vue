@@ -58,7 +58,7 @@
               > -->
               <!--可以自行增加按钮，请改变点击事件的第二个参数，父组件会根据第二个参数判断当前点击的是什么按钮-->
 
-               <el-button
+              <el-button
                 @click="handleEdit(scope.row, 'edit')"
                 size="mini"
                 type="primary"
@@ -70,8 +70,10 @@
                 type="primary"
                 >编辑</el-button
               >
-               <el-button
-                v-if="scope.row.check_status == 0 || scope.row.check_status == 1"
+              <el-button
+                v-if="
+                  scope.row.check_status == 0 || scope.row.check_status == 1
+                "
                 @click="handleEdit(scope.row, 'accountFenPei')"
                 size="mini"
                 type="warning"
@@ -88,7 +90,7 @@
           >
           </el-table-column>
 
-           <el-table-column
+          <el-table-column
             v-else-if="item.id === 'business_license_url'"
             :label="item.label"
             :key="index"
@@ -200,7 +202,7 @@ export default {
       default: () => []
     },
     total: { type: Number, default: 0 },
-    height: { type: Number, default: 0 },
+    height: { default: 0 },
     pageSize: { type: Number, default: 0 }
   },
   created() {

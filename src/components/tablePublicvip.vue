@@ -79,7 +79,17 @@
             :resizable="false"
           >
             <template slot-scope="scope">
-              {{scope.row.purchase_type=='1'? '开通会员':scope.row.purchase_type=='2'? '续费会员': scope.row.purchase_type=='3'? '赠送会员' : scope.row.purchase_type=='4'? '预购会员':''}}
+              {{
+                scope.row.purchase_type == "1"
+                  ? "开通会员"
+                  : scope.row.purchase_type == "2"
+                  ? "续费会员"
+                  : scope.row.purchase_type == "3"
+                  ? "赠送会员"
+                  : scope.row.purchase_type == "4"
+                  ? "预购会员"
+                  : ""
+              }}
             </template>
           </el-table-column>
 
@@ -175,7 +185,7 @@ export default {
       default: () => []
     },
     total: { type: Number, default: 0 },
-    height: { type: Number, default: 0 },
+    height: { default: 0 },
     pageSize: { type: Number, default: 0 }
   },
   created() {

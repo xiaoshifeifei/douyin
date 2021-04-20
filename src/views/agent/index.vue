@@ -84,7 +84,7 @@
         :current-page="app.tableData.page"
         :page-size="app.tableData.limit"
         :total="app.tableData.totalItem"
-        :page-sizes="[10,20, 50, 100]"
+        :page-sizes="[10, 20, 50, 100]"
       ></el-pagination>
     </el-card>
 
@@ -138,10 +138,10 @@ import {
   // reqVersionList,
   // reqVersionDetail,
   // updateVersion,
-  sellList,  //获取列表
-  rellRead  //详情
+  sellList, //获取列表
+  rellRead //详情
 } from "@/api/listvip";
-export default { 
+export default {
   data() {
     return {
       uploadHeaders: {
@@ -152,7 +152,7 @@ export default {
         { prop: "tel", label: "手机号", width: 100 },
         { prop: "exp_time", label: "过期时间", width: 100 },
         { prop: "commission_ratio", label: "雇佣配比", width: 100 },
-        { prop: "password", label: "密码", width: 100 },
+        { prop: "password", label: "密码", width: 100 }
       ],
       app: {
         tableData: {
@@ -201,7 +201,7 @@ export default {
       },
       showDetail: false,
       isCreate: false, // true 创建 false 编辑
-      keywords:'',
+      keywords: "",
       fileList: [] //此数组中存入所有提交的文档信息
     };
   },
@@ -209,14 +209,14 @@ export default {
     this.getVersionList(1);
   },
   methods: {
-     getVersionLists(val) {
-    console.log(`每21111页 ${val} 条`)
-    this.getVersionList(val);
+    getVersionLists(val) {
+      console.log(`每21111页 ${val} 条`);
+      this.getVersionList(val);
     },
-    handleSizeChange(val){
-     console.log(`每页 ${val} 条`)
-     this.app.tableData.limit = val
-     this.getVersionList(1);
+    handleSizeChange(val) {
+      console.log(`每页 ${val} 条`);
+      this.app.tableData.limit = val;
+      this.getVersionList(1);
     },
     selectFile(file) {},
     beyondFile() {
@@ -245,9 +245,9 @@ export default {
     },
     async getVersionList(page) {
       this.app.tableLoading = true;
-      this.app.tableData.page = page
+      this.app.tableData.page = page;
       try {
-        let res = await sellList( this.app.tableData);
+        let res = await sellList(this.app.tableData);
         console.log("res", res);
         if (res.code === 0) {
           console.log("res", res);
@@ -335,7 +335,7 @@ export default {
           memo: this.app.detail.jilu
         };
         if (!this.isCreate) {
-          data.id=this.app.detail.id
+          data.id = this.app.detail.id;
         }
         this.app.saveLoading = true;
         try {

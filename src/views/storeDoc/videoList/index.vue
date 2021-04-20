@@ -265,7 +265,7 @@
           style="width:90%;margin:auto"
         >
           <el-form-item label="所属门店" class="bgctable ">
-             <el-input :value="Info.store_name" readonly></el-input>
+            <el-input :value="Info.store_name" readonly></el-input>
           </el-form-item>
           <el-form-item label="注册手机号" class="bgctable ">
             <el-input
@@ -306,9 +306,9 @@
               {{ this.Info.update_time }}
             </div>
             <div class="box-r">
-              <div class="box1" >审核人: {{ this.Info.operater }}</div>
+              <div class="box1">审核人: {{ this.Info.operater }}</div>
               <!--<div class="box1" v-if="edatPa == '查看审核'">审核人: 系统</div> -->
-              <div class="box2" >
+              <div class="box2">
                 {{
                   this.Info.is_check == -1
                     ? "驳回"
@@ -324,13 +324,13 @@
               </div> -->
             </div>
           </div>
-           <div class="divbox" v-if="this.Info.is_check == 2">
+          <div class="divbox" v-if="this.Info.is_check == 2">
             <div class="box-l">
               {{ this.Info.update_time }}
             </div>
             <div class="box-r">
               <!-- <div class="box1" v-if="edatPa == '详情'">审核人: {{ this.Info.operater }}</div> -->
-              <div class="box1" >审核人: 系统</div>
+              <div class="box1">审核人: 系统</div>
               <!-- <div class="box2" v-if="edatPa == '详情'">
                 {{
                   this.Info.is_check == -1
@@ -349,22 +349,22 @@
           </div>
         </el-form>
         <div class="pl_20" v-if="edatPa == '查看审核'">
-          <el-button class="btn1" v-if="myParams == ''" @click="rejectClick" type="danger"
+          <el-button
+            class="btn1"
+            v-if="myParams == ''"
+            @click="rejectClick"
+            type="danger"
             >驳回</el-button
           >
 
           <!-- <el-button class="btn2" v-if="myParams == ''" type="primary" @click="isCommit"
             >通过</el-button
           > -->
-          <el-button class="btn3" v-else @click="isShowClick" 
-            >关闭</el-button
-          >
+          <el-button class="btn3" v-else @click="isShowClick">关闭</el-button>
           <div style="clear:both"></div>
         </div>
         <div class="value22" v-if="edatPa == '详情'">
-          <el-button class="btn1" @click="isShowClick" 
-            >关闭</el-button
-          >
+          <el-button class="btn1" @click="isShowClick">关闭</el-button>
           <div style="clear:both"></div>
         </div>
       </el-dialog>
@@ -572,7 +572,7 @@ import table2excel from "js-table2excel";
 export default {
   data() {
     return {
-      myParams:'',
+      myParams: "",
       isGo: false,
       rejectInfo: "", //驳回理由
       isReject: false, //驳回显隐
@@ -1047,9 +1047,9 @@ export default {
     });
   },
   methods: {
-    getLists(){
-      this.page = 1
-      this.getList()
+    getLists() {
+      this.page = 1;
+      this.getList();
     },
     // 重置条件
     reaseList() {
@@ -1420,7 +1420,7 @@ export default {
         share_url: "",
         remark: ""
       };
-      this.myParams = ''
+      this.myParams = "";
       this.$refs.Infoss.resetFields();
       this.isShowP = false;
     },
@@ -1468,9 +1468,9 @@ export default {
       });
       if (res.code == 0) {
         this.$message.success({ message: res.msg });
-        this.isReject = false
-        this.isShowP = false
-        this.myParams = 1
+        this.isReject = false;
+        this.isShowP = false;
+        this.myParams = 1;
         this.getList();
       }
     },
@@ -1491,8 +1491,8 @@ export default {
       if (res.code == 0) {
         this.$message.success(res.msg);
         this.isGo = false;
-        this.myParams = 1
-        this.getList()
+        this.myParams = 1;
+        this.getList();
       } else {
         this.$message.error(res.msg);
       }
@@ -1852,8 +1852,6 @@ export default {
      * 打开详情窗口
      */
     async handleInfo(roleData) {
-      
-
       let res = await checkVideo(roleData.video_id);
       console.log("res", res);
       if (res.code == 0) {
@@ -1943,7 +1941,6 @@ export default {
       margin-left: 50%;
       transform: translateX(-50%);
     }
-    
   }
   .video1 {
     padding: 20px 0 0 40px;
@@ -1970,7 +1967,7 @@ export default {
   .el-dialog__header {
     padding: 10px;
     //  background: #1890ff;
-  } 
+  }
   .btnRole {
     margin-left: 20px;
   }

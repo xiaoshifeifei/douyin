@@ -15,9 +15,7 @@ export default {
     baseInfo
   },
   data() {
-    return {
-    
-    };
+    return {};
   },
   mounted() {},
   methods: {}
@@ -25,8 +23,7 @@ export default {
 </script>
 
 <style lang="less">
-.dashboard-box{
+.dashboard-box {
   // padding:32px;
 }
-
 </style>
