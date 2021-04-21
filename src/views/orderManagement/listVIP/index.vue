@@ -130,11 +130,7 @@
           </el-form>
         </div>
       </el-dialog>
-      <el-dialog
-        :title="edatPa"
-        :visible.sync="dialoInfo"
-        width="800"
-      >
+      <el-dialog :title="edatPa" :visible.sync="dialoInfo" width="800">
         <div class="formStyle">
           <el-form
             :model="myInfo.base_info"
@@ -154,31 +150,18 @@
                 readonly
               ></el-input>
             </el-form-item>
-            <el-form-item
-              label="订购时间"
-              prop="update_time"
-              class="bgctable "
-            >
+            <el-form-item label="订购时间" prop="update_time" class="bgctable ">
               <el-input
                 v-model="myInfo.base_info.update_time"
                 readonly
               ></el-input>
             </el-form-item>
-            <el-form-item
-              label="账户手机号"
-              prop="tel"
-
-              class="bgctable "
-            >
-              <el-input
-                v-model="myInfo.base_info.tel"
-                readonly
-              ></el-input>
+            <el-form-item label="账户手机号" prop="tel" class="bgctable ">
+              <el-input v-model="myInfo.base_info.tel" readonly></el-input>
             </el-form-item>
-             <el-form-item
+            <el-form-item
               label="推荐人手机号"
               prop="recom_tel"
-
               class="bgctable "
             >
               <el-input
@@ -186,32 +169,16 @@
                 readonly
               ></el-input>
             </el-form-item>
-            <el-form-item
-              label="门店名称"
-              prop="store_name"
-              class="bgctable "
-            >
+            <el-form-item label="门店名称" prop="store_name" class="bgctable ">
               <el-input
                 v-model="myInfo.base_info.store_name"
                 readonly
               ></el-input>
             </el-form-item>
-            <el-form-item
-              label="会员类型"
-              prop="vip_text"
-
-              class="bgctable "
-            >
-              <el-input
-                v-model="myInfo.base_info.vip_text"
-                readonly
-              ></el-input>
+            <el-form-item label="会员类型" prop="vip_text" class="bgctable ">
+              <el-input v-model="myInfo.base_info.vip_text" readonly></el-input>
             </el-form-item>
-            <el-form-item
-              label="生效时间"
-              prop="effect_time"
-              class="bgctable "
-            >
+            <el-form-item label="生效时间" prop="effect_time" class="bgctable ">
               <el-input
                 v-model="myInfo.base_info.effect_time"
                 readonly
@@ -241,7 +208,9 @@
           </el-form>
         </div>
         <div>
-          <el-button @click="dialoInfo = false" class="diafooter">取消</el-button>
+          <el-button @click="dialoInfo = false" class="diafooter"
+            >取消</el-button
+          >
         </div>
       </el-dialog>
       <el-dialog
@@ -293,15 +262,31 @@
               <span>{{ scope.$index + 1 }}</span>
             </template>
           </el-table-column>
-          <el-table-column prop="serial_number" align="center" label="订单编号" />
+          <el-table-column
+            prop="serial_number"
+            align="center"
+            label="订单编号"
+          />
           <el-table-column prop="update_time" align="center" label="支付时间" />
           <el-table-column prop="tel" align="center" label="账户手机号" />
-          <el-table-column prop="recom_tel" align="center" label="推荐人手机号" />
+          <el-table-column
+            prop="recom_tel"
+            align="center"
+            label="推荐人手机号"
+          />
           <el-table-column prop="store_name" align="center" label="门店名称" />
           <el-table-column prop="vip_text" align="center" label="会员类型" />
           <el-table-column prop="effect_time" align="center" label="生效时间" />
-          <el-table-column prop="payment_amount" align="center" label="支付金额" />
-          <el-table-column prop="purchase_type_text" align="center" label="订购方式" />
+          <el-table-column
+            prop="payment_amount"
+            align="center"
+            label="支付金额"
+          />
+          <el-table-column
+            prop="purchase_type_text"
+            align="center"
+            label="订购方式"
+          />
         </el-table>
         <span slot="footer" class="dialog-footer">
           <el-button @click="handleDialogClose3">取 消</el-button>
@@ -384,20 +369,20 @@ import table2excel from "js-table2excel";
 export default {
   data() {
     return {
-       myInfo: {
+      myInfo: {
         base_info: {
           serial_number: "",
           update_time: "",
           tel: "",
           store_name: "",
           tiktok_num: "",
-          store_name: '',
+          store_name: "",
           contacts: "",
           tel: "",
           province_name: "",
           des: "",
-          missive_url: "",
-        },
+          missive_url: ""
+        }
       },
       startTime: "",
       endTime: "",
@@ -789,7 +774,7 @@ export default {
           isShow: true,
           align: "center"
         },
-         {
+        {
           id: "recom_tel",
           type: "",
           label: "推荐人手机号",
@@ -883,9 +868,9 @@ export default {
     });
   },
   methods: {
-    getLists(){
-      this.page = 1
-      this.getList()
+    getLists() {
+      this.page = 1;
+      this.getList();
     },
     // 重置条件
     reaseList() {
@@ -1748,7 +1733,6 @@ export default {
   font-size: 15px;
   font-weight: 700;
 }
-
 
 .btn-action {
   font-size: 15px;

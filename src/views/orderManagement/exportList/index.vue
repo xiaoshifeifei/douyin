@@ -239,40 +239,13 @@
                 readonly
               ></el-input>
             </el-form-item>
-            <!-- <el-form-item
-              label="营业执照照片"
-              prop="business_license_url"
-              :labelCol="labelCol2"
-              :wrapperCol="wrapperCol2"
-              hasFeedback
-            >
-              <el-image
-                style="width: 50%;height:200px"
-                :preview-src-list="[Info.business_license_url]"
-                :src="Info.business_license_url"
-                alt
-                :disabled="edatPa == '详情'"
-              ></el-image>
-            </el-form-item> -->
+
             <el-form-item label="详细地址" prop="update_time" class="bgctable">
-              <el-input
-                v-model="myInfo.base_info.address"
-                readonly
-              ></el-input>
+              <el-input v-model="myInfo.base_info.address" readonly></el-input>
             </el-form-item>
             <el-form-item label="门店介绍" prop="des" class="bgctable ">
               <el-input v-model="myInfo.base_info.des" readonly></el-input>
             </el-form-item>
-            <!-- <el-form-item
-              label="认证申请公函"
-              prop="missive_url"
-              class="bgctable "
-            >
-              <el-input
-                v-model="myInfo.base_info.missive_url"
-                readonly
-              ></el-input>
-            </el-form-item> -->
 
             <div class="divbox1">
               <div class="box-l">
@@ -1053,7 +1026,7 @@ export default {
               name: "查看",
               type: "primary"
             },
-             {
+            {
               id: "addEdit",
               name: "编辑",
               type: "primary"
@@ -1087,9 +1060,9 @@ export default {
     });
   },
   methods: {
-    getLists(){
-      this.page = 1
-      this.getList()
+    getLists() {
+      this.page = 1;
+      this.getList();
     },
     // 重置条件
     reaseList() {
@@ -1528,7 +1501,7 @@ export default {
         console.log("申请成功", item.index);
         this.onAccount(item.index);
         this.paramsH = item.index.tiktok_num;
-      } else if(item.row == "addEdit"){
+      } else if (item.row == "addEdit") {
         console.log("编辑");
         // this.onDeleteRole(item.index);
       }
@@ -1899,7 +1872,7 @@ export default {
   }
 };
 </script>
-<style lang="less" scoped>
+<style lang="scss" scoped>
 #jurisdiction {
   .input-search {
     width: 200px;

@@ -5,7 +5,6 @@
         ref="multipleTable"
         :data="tableData"
         :height="height"
-        :max-height="windowHeight"
         style="width:100%;"
         border
         :header-row-class-name="tableRowClassName"

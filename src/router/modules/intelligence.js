@@ -74,7 +74,7 @@ export const intelligence = [{
                 component: resolve =>
                     require(["@/views/userManagement/daiLiShanAdmin"], resolve),
                 hidden: true
-            },
+            }
         ]
     },
 
@@ -108,14 +108,16 @@ export const intelligence = [{
                 path: "exportList",
                 name: "exportList",
                 meta: { title: "蓝V订单" },
-                component: resolve => require(["@/views/orderManagement/exportList"], resolve),
+                component: resolve =>
+                    require(["@/views/orderManagement/exportList"], resolve),
                 hidden: false
             },
             {
                 path: "listVIP",
                 name: "listVIP",
                 meta: { title: "会员订单" },
-                component: resolve => require(["@/views/orderManagement/listVIP"], resolve),
+                component: resolve =>
+                    require(["@/views/orderManagement/listVIP"], resolve),
                 hidden: false
             }
         ]
@@ -142,7 +144,7 @@ export const intelligence = [{
                 meta: { title: "视频审核" },
                 component: resolve => require(["@/views/storeDoc/videoList"], resolve),
                 hidden: false
-            },
+            }
             // {
             //     path:  "exportList",
             //     name: "exportList",
@@ -183,7 +185,7 @@ export const intelligence = [{
                 component: resolve =>
                     require(["@/views/systemSet/jurisdiction"], resolve),
                 // hidden: false
-                hidden: true,
+                hidden: true
             },
             {
                 path: "mana",
@@ -192,7 +194,7 @@ export const intelligence = [{
                 component: resolve =>
                     require(["@/views/systemSet/accountManage/AccountManage"], resolve),
                 // hidden: false
-                hidden: true,
+                hidden: true
             },
             {
                 path: "miniprogram",
@@ -225,31 +227,20 @@ export const intelligence = [{
             },
             {
                 path: "systemMessage",
-                component: resolve => require(["@/views/systemSet/systemMessage"], resolve),
+                component: resolve =>
+                    require(["@/views/systemSet/systemMessage"], resolve),
                 name: "systemMessage",
                 meta: { title: "系统消息" }
             },
             {
                 path: "ProtocolManagement",
-                component: resolve => require(["@/views/systemSet/ProtocolManagement"], resolve),
+                component: resolve =>
+                    require(["@/views/systemSet/ProtocolManagement"], resolve),
                 name: "ProtocolManagement",
                 meta: { title: "协议管理" }
-            },
+            }
         ]
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     // {
     //     path: "/businessVip",
@@ -293,7 +284,6 @@ export const intelligence = [{
     //         }
     //     ]
     // },
-
 
     // {
     //     path: "/systemSet",

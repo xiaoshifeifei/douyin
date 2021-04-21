@@ -347,8 +347,8 @@ export default {
         // const info = {
         //   userkey: localStorage.getItem("userKey")
         // };
-        let uid=getUid();
-        console.log(uid)
+        let uid = getUid();
+        console.log(uid);
         // console.log(info)
         self.$store.dispatch("user/logout", uid).then(() => {
           self.$router.push("/login");
